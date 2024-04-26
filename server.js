@@ -24,7 +24,15 @@ app.get('/clothing', async (req, res) => {
     })
 })
 
-//^add this to a show page and loop through things to print to a page.
+// adding an article
+app.get('/clothing/new', async (req, res) => {
+    res.render('clothing/new.ejs');
+})
+
+
+
+
+
 
 
 app.post('/clothing', async (req, res)=>{
@@ -38,10 +46,7 @@ app.post('/clothing', async (req, res)=>{
     const appendClothing = await Clothing.create(req.body)
 })
 
-// adding an article
-app.get('/clothing/new', async (req, res) => {
-    res.render('clothing/new.ejs');
-})
+
 
 // find by ID
 app.get('clothing/:clothingId', async (req, res)=>{
