@@ -7,5 +7,15 @@
 </head>
 <body>
     <h1> everything we have!</h1>
+    <ul>
+        <%clothes.forEach((cloth)=> { %>
+        <li>
+            <a href="/clothing/<%=clothes._id%>">
+                <%=cloth.brand%>
+                <%=cloth.name%>
+        </li>
+        <% }) %>
+    </ul>
+    <a href="/clothing/new">post an item!</a>
 </body>
 </html>

@@ -11,15 +11,17 @@ const Clothing = require('./models/clothing.js')
 
 app.use(express.urlencoded({extended:false}))
 
+// intro page
 app.get('/', async (req, res) => {
     res.render('index.ejs')
 });
 
-// clothing.ejs
+// find an article | clothing.ejs
 app.get('/clothing', async (req, res) => {
     const custClothes = await Clothing.find({})
-    res.render('clothing/show.ejs')
-        custClothes
+    res.render('clothing/index.ejs', {
+        clothes: custClothes
+    })
 })
 
 //^add this to a show page and loop through things to print to a page.
@@ -36,12 +38,18 @@ app.post('/clothing', async (req, res)=>{
     const appendClothing = await Clothing.create(req.body)
 })
 
-
+// adding an article
 app.get('/clothing/new', async (req, res) => {
     res.render('clothing/new.ejs');
 })
 
-app.get()
+// find by ID
+app.get('clothing/:clothingId', async (req, res)=>{
+    const findClothes = await Clothing.findById(req.params.clothingId)
+    res.render('clothing/show.ejs'), {
+        clothing: findClothes
+    }
+})
 
 
 mongoose.connection.on('connected', ()=>{
