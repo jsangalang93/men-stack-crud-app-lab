@@ -49,12 +49,12 @@ app.post('/clothing', async (req, res)=>{
 
 
 // find by ID
-app.get('clothing/:clothingId', async (req, res)=>{
+app.get('/clothing/:clothingId', async (req, res)=>{
     const findClothes = await Clothing.findById(req.params.clothingId)
     res.render('clothing/show.ejs'), {
         clothing: findClothes
     }
-})
+});
 
 
 mongoose.connection.on('connected', ()=>{
