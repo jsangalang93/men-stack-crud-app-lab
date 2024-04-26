@@ -41,6 +41,8 @@ app.get('/clothing/new', async (req, res) => {
     res.render('clothing/new.ejs');
 })
 
+app.get()
+
 
 mongoose.connection.on('connected', ()=>{
     console.log(`connected to MongoDB ${mongoose.connection.name}`)
