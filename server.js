@@ -17,7 +17,8 @@ app.get('/', async (req, res) => {
 
 app.get('/clothing', async (req, res) => {
     const custClothes = await Clothing.find({})
-    res.send(custClothes)
+    res.render('clothing/show.ejs')
+        custClothing
 })
 
 //^add this to a show page and loop through things to print to a page.
