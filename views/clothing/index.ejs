@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Browse Items</title>
 </head>
 <body>
-    <h1> everything we have!</h1>
+    <h1> Everything we have!</h1>
     <ul>
         <%clothes.forEach((cloth)=> { %>
         <li>
-            <a href="/clothing/<%=clothes._id%>">
+            <a href="/clothing/<%=cloth._id%>">
                 <%=cloth.brand%>
                 <%=cloth.name%>
         </li>

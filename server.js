@@ -21,6 +21,7 @@ app.get('/clothing', async (req, res) => {
     const custClothes = await Clothing.find({})
     res.render('clothing/index.ejs', {
         clothes: custClothes
+        // ^maybe cloth?
     })
 })
 
@@ -28,12 +29,6 @@ app.get('/clothing', async (req, res) => {
 app.get('/clothing/new', async (req, res) => {
     res.render('clothing/new.ejs');
 })
-
-
-
-
-
-
 
 app.post('/clothing', async (req, res)=>{
     console.log(req.body)
@@ -44,18 +39,17 @@ app.post('/clothing', async (req, res)=>{
     }
 
     const appendClothing = await Clothing.create(req.body)
+    res.redirect('/clothing')
 })
 
-
-
 // find by ID
+
 app.get('/clothing/:clothingId', async (req, res)=>{
     const findClothes = await Clothing.findById(req.params.clothingId)
     res.render('clothing/show.ejs'), {
-        clothing: findClothes
+        cloth: findClothes
     }
 });
-
 
 mongoose.connection.on('connected', ()=>{
     console.log(`connected to MongoDB ${mongoose.connection.name}`)
