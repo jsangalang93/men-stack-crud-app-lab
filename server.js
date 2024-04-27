@@ -46,10 +46,13 @@ app.post('/clothing', async (req, res)=>{
 
 app.get('/clothing/:clothingId', async (req, res)=>{
     const findClothes = await Clothing.findById(req.params.clothingId)
-    res.render('clothing/show.ejs'), {
+    res.render('clothing/show.ejs', {
         cloth: findClothes
-    }
+    })
+    console.log(findClothes);
 });
+
+
 
 mongoose.connection.on('connected', ()=>{
     console.log(`connected to MongoDB ${mongoose.connection.name}`)
