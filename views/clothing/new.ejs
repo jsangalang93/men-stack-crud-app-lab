@@ -8,15 +8,31 @@
 <body>
     <h1>J's Consignment Upload Form!</h1>
     <form action="/clothing" method="POST">
+
         <label>article of clothing:</label>
         <input type="text" name="name"/><br>
 
         <label>Brand:</label>
         <input type="text" name="brand"/><br>
-        <label>Is it new or in wearable condition?</label>
+
+        <label>Year:</label>
+        <input type="text" name="year"/><br>
+
+        <label>Initially Intended Gender:</label>
+        <input type="text" name="iig"/><br>
+
+        <label>Size:</label>
+        <input type="text" name="size"/><br>
+
+        <label>Price: $</label>
+        <input type="text" name="price"/><br>
+        
+
+        <label>Has the brand been verified with proof?</label>
         <input type="checkbox" name="isReadyToWear"/><br>
         <button type="'submit">Post Your Clothing!</button>
-
+        <a href=" /clothing">Back to all items</a>
+        <p>Here at Mongo's Consignment Store, we put very little emphasis on gender, all clothes are for everyone. Solely for sizing purposes.</p>
     </form>
 
 </body>

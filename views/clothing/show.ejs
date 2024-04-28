@@ -7,8 +7,21 @@
 </head>
 <body>
     <h1>
+        <%=cloth.year%>
+        <%=cloth.iig%>
+        <%=cloth.size%>
+        <%=cloth.brand%>
         <%=cloth.name%> 
+        
     </h1>
+    
+    <p>
+        <% if(cloth.isReadyToWear){ %>
+            <p> The seller has documentation of verification for this product.</p>
+        <% }else{ %>
+            <p> The seller does <b>not</b> have documentation of verification for this product.</p>
+        <% } %>
+    <p>Seller Price: $<%=cloth.price%></p>
    <a href="/clothing">Back to clothing</a>
 </body>
 </html>

@@ -12,6 +12,7 @@ const Clothing = require('./models/clothing.js')
 app.use(express.urlencoded({extended:false}))
 
 // intro page
+
 app.get('/', async (req, res) => {
     res.render('index.ejs')
 });
@@ -51,6 +52,10 @@ app.get('/clothing/:clothingId', async (req, res)=>{
     })
     console.log(findClothes);
 });
+
+
+
+
 
 
 
