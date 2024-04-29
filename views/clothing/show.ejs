@@ -21,6 +21,7 @@
         <% }else{ %>
             <p> The seller does <b>not</b> have documentation of verification for this product.</p>
         <% } %>
+        <form action="/clothing/<%=clothing._id%>/edit">Edit <%=cloth.brand%><%=cloth.name%></form>
     <p>Seller Price: $<%=cloth.price%></p>
    <a href="/clothing">Back to clothing</a>
 </body>

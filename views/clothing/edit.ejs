@@ -9,16 +9,16 @@
     <h1>Edit <%=cloth.brand%> <%=cloth.name%></h1>
     <form action="/clothing/<%=cloth._id%>?_method=PUT" method="POST">
     <label>Type of garment:</label>
-    <input type="text" name="name" valu="<%cloth.name%>"/>
+    <input type="text" name="name" value="<%=cloth.name%>"/>
     <label>Ready to Wear?</label>
-    <input
-        type="checkbox"
-        name="isReadyToWear"
-        <% if(cloth.isReadyToWear){ %>
-        checked
-        <% } %>
-    />
-    <button type="submit">Update <%=cloth.brand%> <%=cloth.name%></button>
+            <input
+                type="checkbox"
+                name="isReadyToWear"
+                <% if(cloth.isReadyToWear){ %>
+                checked
+                <% } %>
+            />
+            <button type="submit">Update <%=cloth.brand%> <%=cloth.name%></button>
         </form>
         <a href="/clothing">Back to Clothing</a>
 </body>

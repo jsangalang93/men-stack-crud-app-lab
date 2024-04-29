@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const methodOverride = require('method-override');
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -10,6 +11,7 @@ mongoose.connect(process.env.MONGODB_URI)
 const Clothing = require('./models/clothing.js')
 
 app.use(express.urlencoded({extended:false}))
+app.use(methodOverride('_method'))
 
 // intro page
 
@@ -67,9 +69,16 @@ app.put('/clothing/:clothingId', async (req, res)=>{
     } else {
         req.body.isReadyToWear = false
     }
-    await Clothing.findByIdAndUpdate(re.params.fruitId, req.body)
+    await Clothing.findByIdAndUpdate(req.params.clothingId, req.body)
     res.redirect('/clothing')
 })
+
+
+app.delete('/clothing/:clothingId', async (req, res)=>{
+    await Clothing.findByIdAndDelete(req.params.clothingId)
+    res.redirect('/clothing')
+})
+
 
 
 
