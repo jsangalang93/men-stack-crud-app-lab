@@ -54,8 +54,22 @@ app.get('/clothing/:clothingId', async (req, res)=>{
 });
 
 
+app.get('/clothing/:clothingId/edit', async (req, res)=>{
+    const findClothes= await Clothing.findById(req.params.clothingId)
+    res.render('clothing/edit.ejs', {
+        cloth: findClothes
+    })
+})
 
-
+app.put('/clothing/:clothingId', async (req, res)=>{
+    if(req.body.isReadyToWear === 'on'){
+        req.body.isReadyToWear = true
+    } else {
+        req.body.isReadyToWear = false
+    }
+    await Clothing.findByIdAndUpdate(re.params.fruitId, req.body)
+    res.redirect('/clothing')
+})
 
 
 
