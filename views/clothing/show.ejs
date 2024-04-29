@@ -15,14 +15,19 @@
         
     </h1>
     
-    <p>
+    
         <% if(cloth.isReadyToWear){ %>
             <p> The seller has documentation of verification for this product.</p>
         <% }else{ %>
             <p> The seller does <b>not</b> have documentation of verification for this product.</p>
         <% } %>
-        <form action="/clothing/<%=clothing._id%>/edit">Edit <%=cloth.brand%><%=cloth.name%></form>
-    <p>Seller Price: $<%=cloth.price%></p>
-   <a href="/clothing">Back to clothing</a>
+        <p>Seller Price: $<%=cloth.price%></p>
+        <form action="/clothing/<%=cloth._id%>?_method=DELETE" method="POST">
+            <button>Delete <%=cloth.brand%><%=cloth.name%></button>
+
+        </form>
+
+        <a href="/clothing/<%=cloth._id%>/edit">Edit <%=cloth.brand%><%=cloth.name%></a>
+        <a href="/clothing">Back to clothing</a>
 </body>
 </html>

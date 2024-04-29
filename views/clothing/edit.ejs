@@ -8,9 +8,26 @@
 <body>
     <h1>Edit <%=cloth.brand%> <%=cloth.name%></h1>
     <form action="/clothing/<%=cloth._id%>?_method=PUT" method="POST">
+
     <label>Type of garment:</label>
     <input type="text" name="name" value="<%=cloth.name%>"/>
-    <label>Ready to Wear?</label>
+
+    <label>Brand name:</label>
+    <input type="text" name="name" value="<%=cloth.brand%>"/>
+
+    <label>year%:</label>
+    <input type="text" name="name" value="<%=cloth.year%>"/>
+
+    <label>Initially Intended Gender:</label>
+    <input type="text" name="name" value="<%=cloth.iig%>"/>
+
+    <label>Size:</label>
+    <input type="text" name="name" value="<%=cloth.size%>"/>
+
+    <label>Price:</label>
+    <input type="text" name="name" value="<%=cloth.price%>"/>
+
+    <label>Is your porduct verified?</label>
             <input
                 type="checkbox"
                 name="isReadyToWear"
