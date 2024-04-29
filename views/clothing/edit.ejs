@@ -10,31 +10,31 @@
     <form action="/clothing/<%=cloth._id%>?_method=PUT" method="POST">
 
     <label>Type of garment:</label>
-    <input type="text" name="name" value="<%=cloth.name%>"/>
+    <input type="text" name="name" value="<%=cloth.name%>"/><br>
 
     <label>Brand name:</label>
-    <input type="text" name="name" value="<%=cloth.brand%>"/>
+    <input type="text" name="brand" value="<%=cloth.brand%>"/><br>
 
-    <label>year%:</label>
-    <input type="text" name="name" value="<%=cloth.year%>"/>
+    <label>year:</label>
+    <input type="text" name="year" value="<%=cloth.year%>"/><br>
 
     <label>Initially Intended Gender:</label>
-    <input type="text" name="name" value="<%=cloth.iig%>"/>
+    <input type="text" name="iig" value="<%=cloth.iig%>"/><br>
 
     <label>Size:</label>
-    <input type="text" name="name" value="<%=cloth.size%>"/>
+    <input type="text" name="size" value="<%=cloth.size%>"/><br>
 
-    <label>Price:</label>
-    <input type="text" name="name" value="<%=cloth.price%>"/>
+    <label>Price: $</label>
+    <input type="text" name="price" value="<%=cloth.price%>"/><br>
 
-    <label>Is your porduct verified?</label>
+    <label>Is your product verified?</label>
             <input
                 type="checkbox"
                 name="isReadyToWear"
                 <% if(cloth.isReadyToWear){ %>
                 checked
                 <% } %>
-            />
+            /><br>
             <button type="submit">Update <%=cloth.brand%> <%=cloth.name%></button>
         </form>
         <a href="/clothing">Back to Clothing</a>
